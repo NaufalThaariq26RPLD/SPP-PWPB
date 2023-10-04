@@ -34,111 +34,45 @@
               <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                 <h6 class="text-white text-capitalize ps-3">TABEL SISWA</h6>
               </div><hr>
-              <a href="#" class="btn btn-success">Tambah +</a>
+              <a href="/tambahsiswa" class="btn btn-success">Tambah +</a>
             </div>
             <div class="card-body px-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Kelas</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Jurusan</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Total Bayar</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
-                      <th class="text-secondary opacity-7"></th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" scope="col">NO</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" scope="col">NISN</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2" scope="col">NIS</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2" scope="col">NAMA</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" scope="col">ALAMAT</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" scope="col">NO TELFON</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" scope="col">AKSI</th>
                     </tr>
                   </thead>
                   <tbody>
+                    @php 
+                    $no = 1;
+                    @endphp
+                    @foreach ($data as $row)
                     <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Thaariq</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">12</p>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">RPL</p>
-                      </td>
-                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs font-weight-bold mb-0">400.000</p>
-                      </td>
+                      <th class="text-xs font-weight-bold mb-0" scope="row">{{ $no++}}</th>
+                      <th class="text-xs font-weight-bold mb-0">{{ $row->nisn}}</th>
+                      <th class="text-xs font-weight-bold mb-0">{{ $row->nis}}</th>
+                      <th class="text-xs font-weight-bold mb-0">{{ $row->nama}}</th>
+                      <th class="align-middle text-center text-sm">
+                        <p class="text-xs font-weight-bold mb-0">{{ $row->alamat}}</p>
+                      </th>
+                      <th class="align-middle text-center text-sm">
+                        <p class="text-xs font-weight-bold mb-0">0{{ $row->no_tlp}}</p>
+                      </th>
                       <td class="align-middle text-center text-sm">
-                        <a href="javascript:;" data-toggle="tooltip" data-original-title="Edit user" ><span class="badge badge-sm bg-gradient-success">Edit</span></a> |
-                        <a href="javascript:;" data-toggle="tooltip" data-original-title="Delete user"><span class="badge badge-sm bg-gradient-danger">Hapus</span></a>
+                        <a href="/tampilsiswa/{{ $row->id }}"><span class="badge badge-sm bg-gradient-success">Edit</span></a> |
+                        <a href="/delete/{{ $row->id }}"><span class="badge badge-sm bg-gradient-danger">Hapus</span></a>
                       </td>
                     </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Fahmi</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">12</p>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">RPL</p>
-                      </td>
-                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs font-weight-bold mb-0">200.000</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <a href="javascript:;" data-toggle="tooltip" data-original-title="Edit user" ><span class="badge badge-sm bg-gradient-success">Edit</span></a> |
-                        <a href="javascript:;" data-toggle="tooltip" data-original-title="Delete user"><span class="badge badge-sm bg-gradient-danger">Hapus</span></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Bintang</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">12</p>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">RPL</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs font-weight-bold mb-0">300.000</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <a href="javascript:;" data-toggle="tooltip" data-original-title="Edit user" ><span class="badge badge-sm bg-gradient-success">Edit</span></a> |
-                        <a href="javascript:;" data-toggle="tooltip" data-original-title="Delete user"><span class="badge badge-sm bg-gradient-danger">Hapus</span></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Ibnu</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">12</p>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">RPL</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs font-weight-bold mb-0">500.000</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <a href="javascript:;" data-toggle="tooltip" data-original-title="Edit user" ><span class="badge badge-sm bg-gradient-success">Edit</span></a> |
-                        <a href="javascript:;" data-toggle="tooltip" data-original-title="Delete user"><span class="badge badge-sm bg-gradient-danger">Hapus</span></a>
-                      </td>
-                    </tr>
-</tbody>
+                    @endforeach
+                  </tbody>
                 </table>
               </div>
             </div>

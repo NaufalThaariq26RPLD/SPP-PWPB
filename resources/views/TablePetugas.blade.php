@@ -34,52 +34,34 @@
               <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                 <h6 class="text-white text-capitalize ps-3">TABEL PETUGAS</h6>
               </div><hr>
-              <a href="#" class="btn btn-success">Tambah +</a>
+              <a href="/tambahpetugas" class="btn btn-success">Tambah +</a>
             </div>
             <div class="card-body px-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Username</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
-                      <th class="text-secondary opacity-7"></th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" scope="col">NO</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" scope="col">EMAIL</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2" scope="col">USERNAME</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" scope="col">AKSI</th>
                     </tr>
                   </thead>
                   <tbody>
+                    @php
+                    $no = 1;
+                    @endphp
+                    @foreach ($data as $row)
                     <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Petugas1@gmail.com</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">Petugas 1</p>
-                      </td>
+                    <th class="text-xs font-weight-bold mb-0" scope="row">{{ $no++}}</th>
+                      <th class="text-xs font-weight-bold mb-0">{{ $row->email}}</th>
+                      <th class="text-xs font-weight-bold mb-0">{{ $row->username}}</th>
                       <td class="align-middle text-center text-sm">
-                        <a href="javascript:;" data-toggle="tooltip" data-original-title="Edit user" ><span class="badge badge-sm bg-gradient-success">Edit</span></a> |
-                        <a href="javascript:;" data-toggle="tooltip" data-original-title="Delete user"><span class="badge badge-sm bg-gradient-danger">Hapus</span></a>
+                        <a href="/tampilpetugas/{{ $row->id }}"><span class="badge badge-sm bg-gradient-success">Edit</span></a> |
+                        <a href="/deletepetugas/{{ $row->id }}"><span class="badge badge-sm bg-gradient-danger">Hapus</span></a>
                       </td>
                     </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Petugas2@gmail.com</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">Petugas 2</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <a href="javascript:;" data-toggle="tooltip" data-original-title="Edit user" ><span class="badge badge-sm bg-gradient-success">Edit</span></a> |
-                        <a href="javascript:;" data-toggle="tooltip" data-original-title="Delete user"><span class="badge badge-sm bg-gradient-danger">Hapus</span></a>
-                      </td>
-                    </tr>
+                    @endforeach
 </tbody>
                 </table>
               </div>

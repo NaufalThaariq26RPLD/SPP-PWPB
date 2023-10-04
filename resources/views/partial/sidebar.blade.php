@@ -22,7 +22,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">DATA TABEL</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="/Siswa">
+          <a class="nav-link text-white " href="/siswa">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">school</i>
             </div>
@@ -30,7 +30,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="/Petugas">
+          <a class="nav-link text-white " href="/petugas">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">person</i>
             </div>
@@ -38,7 +38,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="/Kelas">
+          <a class="nav-link text-white " href="/kelas">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">class</i>
             </div>
@@ -46,7 +46,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="/Spp">
+          <a class="nav-link text-white " href="/spp">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">paid</i>
             </div>
@@ -57,7 +57,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">TRANSAKSI</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="/History">
+          <a class="nav-link text-white " href="/history">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">schedule</i>
             </div>

@@ -34,48 +34,34 @@
               <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                 <h6 class="text-white text-capitalize ps-3">TABEL KELAS</h6>
               </div><hr>
-              <a href="#" class="btn btn-success">Tambah +</a>
+              <a href="/tambahkelas" class="btn btn-success">Tambah +</a>
             </div>
             <div class="card-body px-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kelas</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Jurusan</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Jumlah siswa</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sudah Membayar</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Belum Membayar</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
-                      <th class="text-secondary opacity-7"></th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" scope="col">NO</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" scope="col">NAMA KELAS</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" scope="col">KOMPETENSI</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" scope="col">AKSI</th>
                     </tr>
                   </thead>
                   <tbody>
+                  @php 
+                    $no = 1;
+                    @endphp
+                    @foreach ($data as $row)
                     <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="text-xs font-weight-bold mb-0">12RPLD</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">REKAYASA PERANGKAT LUNAK</p>
-                      </td>
+                    <th class="text-xs font-weight-bold mb-0" scope="row">{{ $no++}}</th>
+                    <th class="text-xs font-weight-bold mb-0">{{ $row->nama_kelas}}</th>
+                    <th class="text-xs font-weight-bold mb-0">{{ $row->kompetensi}}</th>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs font-weight-bold mb-0">33</p>
-                      </td>
-                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs font-weight-bold mb-0">9</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs font-weight-bold mb-0">24</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <a href="javascript:;" data-toggle="tooltip" data-original-title="Edit user" ><span class="badge badge-sm bg-gradient-success">Edit</span></a> |
-                        <a href="javascript:;" data-toggle="tooltip" data-original-title="Delete user"><span class="badge badge-sm bg-gradient-danger">Hapus</span></a>
+                        <a href="/tampilkelas/{{ $row->id }}" data-toggle="tooltip" data-original-title="Edit user" ><span class="badge badge-sm bg-gradient-success">Edit</span></a> |
+                        <a href="/deletekelas/{{ $row->id }}" data-toggle="tooltip" data-original-title="Delete user"><span class="badge badge-sm bg-gradient-danger">Hapus</span></a>
                       </td>
                     </tr>
+                    @endforeach
 </tbody>
                 </table>
               </div>
